@@ -1,0 +1,29 @@
+(csetq *LOGICMOO-KB-DIR* "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb")
+(csetq *subl-logicmoo-os-directory-separator* "/")
+
+;; (define logicmoo-include (file)
+;;  (clet ((dir
+;; 	 (join-strings
+;; 	  (list *LOGICMOO-KB-DIR* file)
+;; 	  *subl-logicmoo-os-directory-separator*)))
+;;   (logicmoo-include-helper dir)))
+
+;; (define logicmoo-include-helper (dir)
+;;  ;; (print (cconcatenate "    " dir))
+;;  (pif (file-exists? dir)
+;;   (load dir)))
+
+;; ;; must load first
+;; (logicmoo-include "util.subl")
+;; (logicmoo-include "logicmoo.subl")
+;; (logicmoo-include "logicmoo-collaborators.subl")
+;; (logicmoo-include "logicmoo-cleaned.Defx.subl")
+;; (logicmoo-include "goals.subl")
+
+;; must load first
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/util.subl")
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/commands.subl")
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/logicmoo.subl")
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/logicmoo-collaborators.subl")
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/logicmoo-cleaned.Defx.subl")
+(load "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb/goals.subl")

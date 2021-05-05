@@ -1,0 +1,114 @@
+(f "LOGICMOOTodoMt")
+(a '(#$isa #$LOGICMOOTodoMt #$Microtheory) #$BaseKB)
+
+(define isa (constant collection &optional mt-arg)
+ (a (list #$isa constant collection) (get-mt mt-arg)))
+
+(define mt (constant-string)
+ (isa (f constant-string) #$Microtheory))
+
+;; (fix cmh-act-on-referent-and-push-onto-ring "arg1"
+;;  #$subjectMatterExpertFn ("((var-X . #$Topic))") should
+;;  be ("#$Topic") or something)
+
+;; (now that we have arg2 working with cmh, have it introspect, so
+;;  that if want to add something with an #$isa
+;;  you say (cmh-build-relation #$isa), and then it populates
+;;  (#$and
+;;   (#$isa ?X ?Y)
+;;   (#$isa ?X (arg1 #$isa))
+;;   (#$isa ?Y (arg2 #$isa))) and you can go ahead and fill those out)
+
+;; (fix cmh-act-on-referent-and-push-onto-ring and arg so we can
+;;  easily use the answer from both)
+
+(f "GoalFn")
+(a '(#$isa #$GoalFn #$UnaryFunction) #$BaseKB)
+(a '(#$isa #$GoalFn #$ReifiableFunction) #$BaseKB)
+(a '(#$isa #$arity #$GoalFn 1) #$BaseKB)
+(a '(#$resultIsa #$GoalFn #$Thing 1) #$BaseKB)
+
+(f "projectGoal")
+(a '(#$isa #$projectGoal #$TernaryPredicate) #$BaseKB)
+(a '(#$arity #$projectGoal 3) #$BaseKB)
+(a '(#$arg1Isa #$projectGoal #$Person) #$BaseKB) 
+(a '(#$arg2Isa #$projectGoal #$Project) #$BaseKB) 
+(a '(#$arg3Isa #$projectGoal #$Thing) #$BaseKB) 
+(a '(#$arg3Format #$projectGoal #$SetTheFormat) #$BaseKB) 
+
+(f "LOGICMOOProject")
+(a '(#$isa #$LOGICMOOProject #$Project) #$BaseKB)
+
+(f "DouglasMiles")
+(a '(#$isa #$DouglasMiles #$Person) #$BaseKB)
+
+(f "AndrewDougherty")
+(a '(#$isa #$AndrewDougherty #$Person) #$BaseKB)
+
+(define ygoals? () (ret (q '(#$projectGoal #$AndrewDougherty #$LOGICMOOProject ?Y) #$BaseKB)))
+(define ygoal (goal) (ret (cyc-assert (list #$projectGoal #$AndrewDougherty #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
+(define remove-ygoal (goal) (ret (cyc-unassert (list #$projectGoal #$AndrewDougherty #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
+
+(define dgoals? () (ret (q '(#$projectGoal #$DouglasMiles #$LOGICMOOProject ?Y) #$BaseKB)))
+(define dgoal (goal) (ret (cyc-assert (list #$projectGoal #$DouglasMiles #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
+(define remove-dgoal (goal) (ret (cyc-unassert (list #$projectGoal #$DouglasMiles #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
+
+(define goals? () (ret (q '(#$projectGoal ?X #$LOGICMOOProject ?Y) #$BaseKB)))
+
+;; (setq *subl-debug* t)
+
+;; (define add-goals (goal-list)
+;;  (cdolist (*goal* goal-list)
+;;   (a (list #$goals #$AndrewDougherty (list #$GoalFn *goal*)) #$LOGICMOOTodoMt)))
+
+;; (add-goals
+;;  (list
+;;   "Improve the integration between Cyc and Emacs by writing functions which allow us to introspect on subl functions."
+;;   "Make it so we can do cmh-act-on-referent-and-push-onto-ring on #$recruit and have it return the answer into the freekbs2-stack"
+;;   "Write a subl function alias: (alias 'p 'print-special) or whatever that defines a given function to be a shortcut for another, like shell aliases."
+;;   "find-or-create a subl search function for subl commands"
+;;   "make a subl function that sorts printed output, such as of apropos, if possible"
+;;   "we need to derive from looking at other assertions assertions that could apply to our constants.  for instance, looking at (c #$ZermeloFraenkelSetTheory), I saw #<AS:(#$theoreticalField #$ZermeloFraenkelSetTheory #$SetTheory):#$HistoryOfScienceDataMt>"
+;;   "gather all semweb ontologies for starters"
+;;   "should have it try different things and induce what the actual function is"
+;;   "try replacing #$TemporalThing with #$Book-CW"
+;;   ))
+
+;; write a function that defines subl functions for us, like the emacs
+;; describe-function.  call it describe-subl-function.  use our
+;; previous work on encoding subl definitions in CycL
+
+;; CYC(103): (SUBLISP::PRINT-ERROR  nil "Error")
+;; (SUBLISP::PRINT-ERROR  nil "Error")
+
+;; Error: FORMAT does not support string destinations.
+;; java.lang.Exception
+
+(define describe-subl-function (function)
+ (cmh-not-yet-implemented))
+
+;; (define formalize (subject)
+;;  (cmh-fixme
+;;   "")
+;;  (cmh-not-yet-implemented))
+
+;; (formalize "Mathematics")
+;; (formalize "Tolkien")
+
+;; (define add-questions (question-list)
+;;  (cdolist (*question* question-list)
+;;   (am (list #$goals #$LOGICMOOProject (list #$GoalFn goal)) #$LOGICMOOTodoMt)))
+
+;; (add question "Under what condition is it advisable to put *logicmoo-kb-dir* versus logicmoo-kb-dir") 
+
+;; (define definition (word)
+;;  (clet ((constant (find-or-create-constant (cyc-string-concat (list (cyc-capitalize-smart word) "-TheWord")))))
+;;   (ret (cyc-query `(#$denotation ,constant ?X ?Y ?DENOTATION) #$GeneralEnglishMt))))
+
+(define definition (word) (clet ((constant (find-or-create-constant (cyc-string-concat (list (cyc-capitalize-smart word) "-TheWord"))))) (ret (list (comment (cdr (car (last (car (cyc-query `(#$denotation ,constant ?X ?Y ?DENOTATION) #$GeneralEnglishMt))))))))))
+
+;; cyc: (string #'(lambda (word) (clet ((constant
+;;       (find-or-create-constant (cyc-string-concat (list (cyc-capitalize-smart
+;;       word) "-TheWord"))))) (ret (list (comment (cdr (car (last (car
+;;       (cyc-query `(#$denotation ,constant ?X ?Y ?DENOTATION)
+;;       #$GeneralEnglishMt))))))))) (ret "test")))

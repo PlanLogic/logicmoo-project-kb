@@ -1,0 +1,80 @@
+(define pred-1 (constant-string arg1isa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$UnaryPredicate) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))
+
+(define pred-2 (constant-string arg1isa arg2isa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$BinaryPredicate) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    (list (non-nil arg2isa) (list #$arg2Isa constant arg2isa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))
+
+(define pred-3 (constant-string arg1isa arg2isa arg3isa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$TernaryPredicate) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    (list (non-nil arg2isa) (list #$arg2Isa constant arg2isa))
+    (list (non-nil arg3isa) (list #$arg2Isa constant arg3isa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))
+
+(define func-1 (constant-string arg1isa resultisa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$UnaryFunction) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    (list (non-nil resultIsa) (list #$resultIsa constant resultisa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))
+
+(define func-2 (constant-string arg1isa arg2isa resultisa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$BinaryFunction) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    (list (non-nil arg2isa) (list #$arg2Isa constant arg2isa))
+    (list (non-nil resultIsa) (list #$resultIsa constant resultisa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))
+
+(define func-3 (constant-string arg1isa arg2isa arg3isa resultisa &optional mt-arg)
+ (clet ((constant (find-or-create-constant constant-string))
+	(mt (get-mt mt-arg)))
+  (a (list #$isa constant #$TernaryFunction) mt)
+  (alt
+   (list
+    (list (non-nil arg1isa) (list #$arg1Isa constant arg1isa))
+    (list (non-nil arg2isa) (list #$arg2Isa constant arg2isa))
+    (list (non-nil arg3isa) (list #$arg2Isa constant arg3isa))
+    (list (non-nil resultIsa) (list #$resultIsa constant resultisa))
+    )
+   mt)
+  (pif *subl-debug*
+   (c constant))))

@@ -5,6 +5,14 @@
 (f "LogicMOOMt")
 (am '(#$isa #$LogicMOOMt #$Microtheory) #$BaseKB)
 
+(f "AIResearcher")
+(am '(#$isa #$AIResearcher #$Collection) #$LogicMOOMt)
+(am '(#$genls #$AIResearcher #$ComputerScientist) #$LogicMOOMt)
+
+(f "DouglasMiles")
+(am '(#$isa #$DouglasMiles #$AIResearcher) #$LogicMOOMt)
+(am '(#$isa #$DouglasMiles #$ComputerProgrammerProfessional) #$LogicMOOMt)
+
 (f "TravisCI-TheProgram")
 (am '(#$isa #$TravisCI-TheProgram #$ComputerProgram-CW) #$LogicMOOMt)
 ;; (am '(#$authorOfProgramWithAIS #$TravisCI-TheProgram #$DouglasMiles) #$LogicMOOMt)
@@ -23,6 +31,8 @@
 (f "LogicMOO-TheProgram")
 (am '(#$isa #$LogicMOO-TheProgram #$ComputerProgram-CW) #$LogicMOOMt)
 (am '(#$authorOfProgramWithAIS #$LogicMOO-TheProgram #$DouglasMiles) #$LogicMOOMt)
+
+(pred-2 "projectUsesTool" #$Project #$ComputerProgram-CW #$BaseKB)
 
 (f "PrologCYC-TheLibrary")
 (am '(#$isa #$PrologCYC-TheLibrary #$ComputerProgram-CW) #$LogicMOOMt)

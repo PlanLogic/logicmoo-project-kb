@@ -1,5 +1,8 @@
 ;; logicmoo-collaborators.subl
 
+(f "LogicmooCommunityMt")
+(am '(#$isa #$LogicmooCommunityMt #$Microtheory) #$BaseKB)
+
 (f "LogicmooCollaborator")
 (am '(#$isa #$LogicmooCollaborator #$Collection) #$LogicmooCommunityMt)
 
