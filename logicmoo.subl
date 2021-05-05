@@ -5,6 +5,13 @@
 (f "LogicMOOMt")
 (am '(#$isa #$LogicMOOMt #$Microtheory) #$BaseKB)
 
+(f "TravisCI-TheProgram")
+(am '(#$isa #$TravisCI-TheProgram #$ComputerProgram-CW) #$LogicMOOMt)
+;; (am '(#$authorOfProgramWithAIS #$TravisCI-TheProgram #$DouglasMiles) #$LogicMOOMt)
+
+;; schedule a meeting
+;; (setup TravisCI)
+
 (f "PrologMUD-TheProgram")
 (am '(#$isa #$PrologMUD-TheProgram #$ComputerProgram-CW) #$LogicMOOMt)
 (am '(#$authorOfProgramWithAIS #$PrologMUD-TheProgram #$DouglasMiles) #$LogicMOOMt)
@@ -64,7 +71,7 @@
 (f "PlanApplierModule-TheProgram")
 (am '(#$isa #$PlanApplierModule-TheProgram #$ComputerProgram-CW) #$LogicMOOMt)
 (am '(#$projectUsesTool #$LogicMOOProject #$PlanApplierModule-TheProgram) #$LogicMOOMt)
-(am '(#$acronymString #$PlanApplierModule-TheProgram "PAM")
+(am '(#$acronymString #$PlanApplierModule-TheProgram "PAM") #$LogicMOOMt)
 
 (f "CycBehaviorLanguage-TheProgram")
 
@@ -228,3 +235,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; commands to run.
+
+;; HOW TO QUIT WHEN YOU GET TO: 'player~1@[does]>'
+
+;; `prolog.`
+
+;; to go from 'baseKB:' to 'player' prompt do:
+
+;; `ctrl-d`
+
+
+
+;; contextual help
+
+;; listing(mu_global:cmd_help/2).

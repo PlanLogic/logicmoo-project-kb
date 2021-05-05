@@ -1,0 +1,16 @@
+;; logicmoo-collaborators.subl
+
+(f "LogicmooCollaborator")
+(am '(#$isa #$LogicmooCollaborator #$Collection) #$LogicmooCommunityMt)
+
+(f "PossibleLogicmooCollaborator")
+(am '(#$isa #$PossibleLogicmooCollaborator #$Collection) #$LogicmooCommunityMt)
+(cyc-assert
+ '(#$implies (#$isa ?Agent #$PossibleLogicmooCollaborator) (#$possible (#$isa ?Agent #$LogicmooCollaborator)))
+ #$LogicmooCommunityMt '(:direction :forward))
+
+(f "LogicmooContributor")
+(am '(#$isa #$LogicmooContributor #$Collection) #$LogicmooCommunityMt)
+
+(f "PossibleLogicmooContributor")
+(am '(#$isa #$PossibleLogicmooContributor #$Collection) #$LogicmooCommunityMt)
