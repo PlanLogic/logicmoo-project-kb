@@ -1,0 +1,12 @@
+(f "DouglasMiles")
+(a '(#$isa #$DouglasMiles #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$DouglasMiles #$AIResearcher) #$LogicmooAgentMt)
+(a '(#$isa #$DouglasMiles #$ComputerProgrammerProfessional) #$LogicmooAgentMt)
+
+(define dgoals? () (ret (q '(#$projectGoal #$DouglasMiles #$LogicmooProject ?Y) #$BaseKB)))
+(define dgoal (goal) (ret (cyc-assert (list #$projectGoal #$DouglasMiles #$LogicmooProject (list #$GoalFn goal)) #$BaseKB)))
+(define remove-dgoal (goal) (ret (cyc-unassert (list #$projectGoal #$DouglasMiles #$LogicmooProject (list #$GoalFn goal)) #$BaseKB)))
+
+(a '(#$alias #$DouglasMiles "dmiles") #$LogicmooAgentMt)
+(a '(#$alias #$DouglasMiles "dm1les") #$LogicmooAgentMt)
+(a '(#$alias #$DouglasMiles "logicmoo") #$LogicmooAgentMt)

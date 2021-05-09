@@ -1,5 +1,5 @@
-(f "LOGICMOOTodoMt")
-(a '(#$isa #$LOGICMOOTodoMt #$Microtheory) #$BaseKB)
+(f "LogicmooTodoMt")
+(a '(#$isa #$LogicmooTodoMt #$Microtheory) #$BaseKB)
 
 (define isa (constant collection &optional mt-arg)
  (a (list #$isa constant collection) (get-mt mt-arg)))
@@ -31,48 +31,21 @@
 (f "projectGoal")
 (a '(#$isa #$projectGoal #$TernaryPredicate) #$BaseKB)
 (a '(#$arity #$projectGoal 3) #$BaseKB)
-(a '(#$arg1Isa #$projectGoal #$Person) #$BaseKB) 
+(a '(#$arg1Isa #$projectGoal #$IntelligentAgent) #$BaseKB) 
 (a '(#$arg2Isa #$projectGoal #$Project) #$BaseKB) 
 (a '(#$arg3Isa #$projectGoal #$Thing) #$BaseKB) 
 (a '(#$arg3Format #$projectGoal #$SetTheFormat) #$BaseKB) 
 
-(f "LOGICMOOProject")
-(a '(#$isa #$LOGICMOOProject #$Project) #$BaseKB)
+(f "LogicmooProject")
+(a '(#$isa #$LogicmooProject #$Project) #$BaseKB)
 
-(f "DouglasMiles")
-(a '(#$isa #$DouglasMiles #$Person) #$BaseKB)
-
-(f "AndrewDougherty")
-(a '(#$isa #$AndrewDougherty #$Person) #$BaseKB)
-
-(define ygoals? () (ret (q '(#$projectGoal #$AndrewDougherty #$LOGICMOOProject ?Y) #$BaseKB)))
-(define ygoal (goal) (ret (cyc-assert (list #$projectGoal #$AndrewDougherty #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
-(define remove-ygoal (goal) (ret (cyc-unassert (list #$projectGoal #$AndrewDougherty #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
-
-(define dgoals? () (ret (q '(#$projectGoal #$DouglasMiles #$LOGICMOOProject ?Y) #$BaseKB)))
-(define dgoal (goal) (ret (cyc-assert (list #$projectGoal #$DouglasMiles #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
-(define remove-dgoal (goal) (ret (cyc-unassert (list #$projectGoal #$DouglasMiles #$LOGICMOOProject (list #$GoalFn goal)) #$BaseKB)))
-
-(define goals? () (ret (q '(#$projectGoal ?X #$LOGICMOOProject ?Y) #$BaseKB)))
+(define goals? () (ret (q '(#$projectGoal ?X #$LogicmooProject ?Y) #$BaseKB)))
 
 ;; (setq *subl-debug* t)
 
-;; (define add-goals (goal-list)
-;;  (cdolist (*goal* goal-list)
-;;   (a (list #$goals #$AndrewDougherty (list #$GoalFn *goal*)) #$LOGICMOOTodoMt)))
-
-;; (add-goals
-;;  (list
-;;   "Improve the integration between Cyc and Emacs by writing functions which allow us to introspect on subl functions."
-;;   "Make it so we can do cmh-act-on-referent-and-push-onto-ring on #$recruit and have it return the answer into the freekbs2-stack"
-;;   "Write a subl function alias: (alias 'p 'print-special) or whatever that defines a given function to be a shortcut for another, like shell aliases."
-;;   "find-or-create a subl search function for subl commands"
-;;   "make a subl function that sorts printed output, such as of apropos, if possible"
-;;   "we need to derive from looking at other assertions assertions that could apply to our constants.  for instance, looking at (c #$ZermeloFraenkelSetTheory), I saw #<AS:(#$theoreticalField #$ZermeloFraenkelSetTheory #$SetTheory):#$HistoryOfScienceDataMt>"
-;;   "gather all semweb ontologies for starters"
-;;   "should have it try different things and induce what the actual function is"
-;;   "try replacing #$TemporalThing with #$Book-CW"
-;;   ))
+(define add-goals (agent goal-list)
+ (cdolist (*goal* goal-list)
+  (a (list #$projectGoal agent #$LogicmooProject (list #$GoalFn *goal*)) #$BaseKB)))
 
 ;; write a function that defines subl functions for us, like the emacs
 ;; describe-function.  call it describe-subl-function.  use our
@@ -97,7 +70,7 @@
 
 ;; (define add-questions (question-list)
 ;;  (cdolist (*question* question-list)
-;;   (am (list #$goals #$LOGICMOOProject (list #$GoalFn goal)) #$LOGICMOOTodoMt)))
+;;   (am (list #$goals #$LogicmooProject (list #$GoalFn goal)) #$LogicmooTodoMt)))
 
 ;; (add question "Under what condition is it advisable to put *logicmoo-kb-dir* versus logicmoo-kb-dir") 
 

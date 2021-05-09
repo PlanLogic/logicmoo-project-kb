@@ -1,0 +1,6 @@
+(find-or-create-constant  "DavidWhitten" #G"502b261c-49c5-41d7-9832-ca5ad7b27960")
+(a '(#$isa #$DavidWhitten #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$DavidWhitten #$AIResearcher) #$LogicmooAgentMt)
+(a '(#$isa #$DavidWhitten #$ComputerProgrammerProfessional) #$LogicmooAgentMt)
+
+(a '(#$alias #$DavidWhitten "Dave Whitten") #$LogicmooAgentMt)

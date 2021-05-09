@@ -1,0 +1,6 @@
+(f "JindrichKolman")
+(a '(#$isa #$JindrichKolman #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$JindrichKolman #$ComputerProgrammerProfessional) #$LogicmooAgentMt)
+
+(a '(#$alias #$JindrichKolman "koo") #$LogicmooAgentMt)
+

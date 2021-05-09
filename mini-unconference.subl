@@ -1,0 +1,52 @@
+;; LOGICMOO Mini-Unconference Presentations
+
+;;;;;;;;;;
+
+(f "LogicmooMiniUnconference")
+(a '(#$isa #$LogicmooMiniUnconference #$WorkshopConfererence) #$LogicmooMiniUnconferenceMt)
+
+;;;;;;;;;;
+
+(f "LogicmooStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$LogicmooStudySession) #$LogicmooMiniUnconferenceMt)
+
+;;;;;
+
+(f "KnowledgeRepresentationAndReasoningStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$KnowledgeRepresentationAndReasoningStudySession) #$LogicmooMiniUnconferenceMt)
+
+;;;;;
+
+(f "PrologStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$PrologStudySession) #$LogicmooMiniUnconferenceMt)
+
+(f "HowToTestWithProlog")
+;; (a '(#$askToPresentOn #$DouglasMiles #$HowToTestWithProlog) #$#$LogicmooMiniUnconferenceMt)
+
+;;;;;
+
+(f "OpenCYCStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$OpenCYCStudySession) #$LogicmooMiniUnconferenceMt)
+
+(f "TheUseOfCycL")
+(a '(#$askToPresentOn #$DavidWhitten #$TheUseOfCycL #$LogicmooMiniUnconference) #$#$LogicmooMiniUnconferenceMt)
+(f "UsingTheSHOP2Planner")
+(a '(#$askToPresentOn #$Kinoc #$UsingTheSHOP2Planner #$LogicmooMiniUnconference) #$#$LogicmooMiniUnconferenceMt)
+(f "OpenCYCAgentOrientedProgramming")
+(a '(#$askToPresentOn #$Martinodb #$OpenCYCAgentOrientedProgramming #$LogicmooMiniUnconference) #$#$LogicmooMiniUnconferenceMt)
+
+;;;;;
+
+(f "AIPlanningStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$AIPlanningStudySession) #$LogicmooMiniUnconferenceMt)
+
+(f "UsingPDDL2_2")
+(a '(#$willPresentOn #$AndrewDougherty #$UsingPDDL2_2 #$LogicmooMiniUnconference) #$#$LogicmooMiniUnconferenceMt)
+
+;;;;;
+
+(f "FRDCSAStudySession")
+(a '(#$hasTrack #$LogicmooMiniUnconference #$FRDCSAStudySession) #$LogicmooMiniUnconferenceMt)
+
+(f "IntroductionToPanoplyFRDCSAAndFreeLifePlanner")
+(a '(#$willPresentOn #$AndrewDougherty #$IntroductionToPanoplyFRDCSAAndFreeLifePlanner #$LogicmooMiniUnconference) #$#$LogicmooMiniUnconferenceMt)

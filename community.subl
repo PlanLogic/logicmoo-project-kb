@@ -1,0 +1,29 @@
+;; logicmoo-collaborators.subl
+
+(f "LogicmooCommunityMt")
+(a '(#$isa #$LogicmooCommunityMt #$Microtheory) #$BaseKB)
+
+(a '(#$genlMt #$LogicmooMt #$LogicmooCommunityMt) #$BaseKB)
+
+(f "LogicmooCollaborator")
+(a '(#$isa #$LogicmooCollaborator #$Collection) #$LogicmooCommunityMt)
+
+(f "PossibleLogicmooCollaborator")
+(a '(#$isa #$PossibleLogicmooCollaborator #$Collection) #$LogicmooCommunityMt)
+(cyc-assert
+ '(#$implies (#$isa ?Agent #$PossibleLogicmooCollaborator) (#$possible (#$isa ?Agent #$LogicmooCollaborator)))
+ #$LogicmooCommunityMt '(:direction :forward))
+
+(f "LogicmooContributor")
+(a '(#$isa #$LogicmooContributor #$Collection) #$LogicmooCommunityMt)
+
+(f "PossibleLogicmooContributor")
+(a '(#$isa #$PossibleLogicmooContributor #$Collection) #$LogicmooCommunityMt)
+
+(f "LogicmooCollaboratorsWhoConsentToBeTrackedInKB")
+(a '(#$isa #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB #$Collection) #$LogicmooCommunityMt)
+
+(a '(#$genls #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB #$IntelligentAgent) #$LogicmooCommunityMt)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

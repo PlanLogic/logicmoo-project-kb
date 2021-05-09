@@ -1,0 +1,17 @@
+(f "LogicmooAgentMt")
+(am '(#$isa #$LogicmooAgentMt #$Microtheory) #$BaseKB)
+
+(a '(#$genlMt #$LogicmooCommunityMt #$LogicmooAgentMt) #$BaseKB)
+
+;; intelligent agents who have granted permission to belong to the LOGICMOO ontology
+
+(csetq *logicmoo-agent-directory* (cconcatenate *LOGICMOO-KB-DIR* *subl-logicmoo-os-directory-separator* "agents"))
+
+(cdolist (*agent-subl-file* (directory *logicmoo-agent-directory*))
+ (clet ((dir (cconcatenate "agents" *subl-logicmoo-os-directory-separator* *agent-subl-file*)))
+  (print (cconcatenate "LOADING AGENT-KB " dir))
+  (logicmoo-include dir)
+  (print dir)
+  (clet ((*autoload-dir* (cconcatenate dir *subl-logicmoo-os-directory-separator* "autoload")))
+   (cdolist (*autoload-file* (directory *autoload-dir*))
+    (logicmoo-include (cconcatenate *autoload-dir* *subl-logicmoo-os-directory-separator* *autoload-file*))))))

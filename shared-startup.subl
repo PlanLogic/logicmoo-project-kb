@@ -1,0 +1,25 @@
+(csetq *LOGICMOO-KB-DIR* "/var/lib/myfrdcsa/collaborative/git/logicmoo-project-kb")
+(csetq *subl-logicmoo-os-directory-separator* "/")
+
+(define logicmoo-include (file)
+ (clet ((dir
+	 (cconcatenate *LOGICMOO-KB-DIR* *subl-logicmoo-os-directory-separator* file)))
+  (logicmoo-include-helper dir)))
+
+(define logicmoo-include-helper (dir)
+ ;; (print (cconcatenate "    " dir))
+ ;; (pif (file-exists? dir)
+ (load dir)
+ ;;)
+ )
+
+(logicmoo-include "util.subl")
+(logicmoo-include "commands.subl")
+(logicmoo-include "goals.subl")
+(logicmoo-include "logicmoo.subl")
+(logicmoo-include "community.subl")
+(logicmoo-include "agents.subl")
+(logicmoo-include "contents.subl")
+(logicmoo-include "definitions.subl")
+(logicmoo-include "cheatsheets.subl")
+

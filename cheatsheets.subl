@@ -1,0 +1,17 @@
+;; FIXME: have to deal with directory structure of cheetsheets correctly
+
+;; (f "LogicmooCheatsheetMt")
+;; (am '(#$isa #$LogicmooCheatsheetMt #$Microtheory) #$BaseKB)
+
+;; (a '(#$genlMt #$LogicmooCommunityMt #$LogicmooCheatsheetMt) #$BaseKB)
+
+;; (csetq *logicmoo-cheatsheet-directory* (cconcatenate *LOGICMOO-KB-DIR* *subl-logicmoo-os-directory-separator* "cheatsheets"))
+
+;; (cdolist (*cheatsheet-subl-file* (directory *logicmoo-cheatsheet-directory*))
+;;  (clet ((dir (cconcatenate "cheatsheets" *subl-logicmoo-os-directory-separator* *cheatsheet-subl-file*)))
+;;   (print (cconcatenate "LOADING AGENT-KB " dir))
+;;   (logicmoo-include dir)
+;;   (print dir)
+;;   (clet ((*autoload-dir* (cconcatenate dir *subl-logicmoo-os-directory-separator* "autoload")))
+;;    (cdolist (*autoload-file* (directory *autoload-dir*))
+;;     (logicmoo-include (cconcatenate *autoload-dir* *subl-logicmoo-os-directory-separator* *autoload-file*))))))
