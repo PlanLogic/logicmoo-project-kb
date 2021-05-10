@@ -1,5 +1,5 @@
 (f "AndrewDougherty")
-(a '(#$isa #$AndrewDougherty #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$AndrewDougherty #$LogicmooCollaboratorWhoConsentsToBeTrackedInKB) #$LogicmooAgentMt)
 (a '(#$isa #$AndrewDougherty #$AIResearcher) #$LogicmooAgentMt)
 
 (define ygoals? () (ret (q '(#$projectGoal #$AndrewDougherty #$LogicmooProject ?Y) #$BaseKB)))

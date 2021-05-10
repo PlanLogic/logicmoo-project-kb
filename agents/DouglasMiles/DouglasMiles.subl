@@ -1,5 +1,5 @@
 (f "DouglasMiles")
-(a '(#$isa #$DouglasMiles #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$DouglasMiles #$LogicmooCollaboratorWhoConsentsToBeTrackedInKB) #$LogicmooAgentMt)
 (a '(#$isa #$DouglasMiles #$AIResearcher) #$LogicmooAgentMt)
 (a '(#$isa #$DouglasMiles #$ComputerProgrammerProfessional) #$LogicmooAgentMt)
 

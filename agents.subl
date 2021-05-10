@@ -7,8 +7,8 @@
 
 (csetq *logicmoo-agent-directory* (cconcatenate *LOGICMOO-KB-DIR* *subl-logicmoo-os-directory-separator* "agents"))
 
-(cdolist (*agent-subl-file* (directory *logicmoo-agent-directory*))
- (clet ((dir (cconcatenate "agents" *subl-logicmoo-os-directory-separator* *agent-subl-file*)))
+(cdolist (*agent-dir* (directory *logicmoo-agent-directory*))
+ (clet ((dir (cconcatenate "agents" *subl-logicmoo-os-directory-separator* *agent-dir* *subl-logicmoo-os-directory-separator* *agent-dir* ".subl")))
   (print (cconcatenate "LOADING AGENT-KB " dir))
   (logicmoo-include dir)
   (print dir)

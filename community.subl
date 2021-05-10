@@ -20,10 +20,10 @@
 (f "PossibleLogicmooContributor")
 (a '(#$isa #$PossibleLogicmooContributor #$Collection) #$LogicmooCommunityMt)
 
-(f "LogicmooCollaboratorsWhoConsentToBeTrackedInKB")
-(a '(#$isa #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB #$Collection) #$LogicmooCommunityMt)
+(f "LogicmooCollaboratorWhoConsentsToBeTrackedInKB")
+(a '(#$isa #$LogicmooCollaboratorWhoConsentsToBeTrackedInKB #$Collection) #$LogicmooCommunityMt)
 
-(a '(#$genls #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB #$IntelligentAgent) #$LogicmooCommunityMt)
+(a '(#$genls #$LogicmooCollaboratorWhoConsentsToBeTrackedInKB #$IntelligentAgent) #$LogicmooCommunityMt)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

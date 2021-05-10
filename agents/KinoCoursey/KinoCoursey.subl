@@ -1,5 +1,5 @@
 (f "KinoCoursey")
-(a '(#$isa #$KinoCoursey #$LogicmooCollaboratorsWhoConsentToBeTrackedInKB) #$LogicmooAgentMt)
+(a '(#$isa #$KinoCoursey #$LogicmooCollaboratorWhoConsentsToBeTrackedInKB) #$LogicmooAgentMt)
 (a '(#$isa #$KinoCoursey #$AIResearcher) #$LogicmooAgentMt)
 (a '(#$isa #$KinoCoursey #$ComputerProgrammerProfessional) #$LogicmooAgentMt)
 
