@@ -1,5 +1,5 @@
 # logicmoo-project-kb
-Project Management for Logicmoo in SubL/CycL
+Project Management for LOGICMOO in SubL/CycL
 
 To run, edit shared-startup.subl to reflect the correct path:
 
